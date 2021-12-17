@@ -118,8 +118,8 @@
             box-shadow: 1px 2px 12px -1px #FFFFFF;
         }
         body{
-            background-color: #000000;
-            background-image: url(imges/mobilebg.jpg);
+            /* background-color: #000000; */
+            /* background-image: url(imges/mobilebg.jpg); */
             background-size: cover;
             height: auto;
         }
