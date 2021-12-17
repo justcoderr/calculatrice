@@ -1,7 +1,6 @@
 let audio = document.getElementsByTagName('audio')[0];
 var btn = Array.from(document.getElementsByTagName("td"));
 var text = document.getElementsByClassName('text')[0]
-console.log(btn);
 
 btn.map(clikedtn =>{
     clikedtn.addEventListener('click' , (e) =>{
@@ -50,9 +49,18 @@ btn.map(clikedtn =>{
                 }
                 break;
             default:
-                if(text.innerText == "0"){
+                if(this.text.innerText == "0"){
+                    if(e.target.innerText == "."){
+                        text.innerText = "0.";
+                    }
+                    else if(e.target.innerText == "0"){
+                        text.innerText = "00";
+                    }
+                    else{
                     text.innerText = e.target.innerText;
-                }else{
+                    }
+                }
+                else{
                     text.innerText += e.target.innerText;
                 }
         }
@@ -60,6 +68,7 @@ btn.map(clikedtn =>{
 })
 document.getElementsByClassName("off-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#292929";
+    this.off = true
 })
 document.getElementsByClassName("on-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#c1d92f";
