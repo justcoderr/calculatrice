@@ -60,6 +60,17 @@ btn.map(clikedtn =>{
                     text.innerText = e.target.innerText;
                     }
                 }
+                else if(this.text.innerText == "Error!"){
+                    if(e.target.innerText == "."){
+                        text.innerText = "0.";
+                    }
+                    else if(e.target.innerText == "0"){
+                        text.innerText = "00";
+                    }
+                    else{
+                    text.innerText = e.target.innerText;
+                    }
+                }
                 else{
                     text.innerText += e.target.innerText;
                 }
