@@ -53,6 +53,7 @@
     .result h1{
         font-family: calcultFont;
         margin: 5px;
+        color: #292929;
     }
     .buttens{
         min-height: 300px;
@@ -63,6 +64,9 @@
     table{
         width: 100%;
         border-spacing: 6px;
+    }
+    audio{
+        display: none;
     }
     tr td{
         text-align: center;
