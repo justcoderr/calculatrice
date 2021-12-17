@@ -109,6 +109,7 @@
 
     @media screen and (max-width: 600px) {
         .calcul{
+            margin-top: 50px;
             background-color: #292929;
             width: 90%;
             padding: 12px;
@@ -120,5 +121,6 @@
             background-color: #000000;
             background-image: url(imges/mobilebg.jpg);
             background-size: cover;
+            height: auto;
         }
       }
