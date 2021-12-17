@@ -58,13 +58,12 @@ btn.map(clikedtn =>{
         }
     })
 })
-
-
+document.getElementsByClassName("off-btn")[0].addEventListener('click', function(){
+    document.getElementById("result").style.background = "#292929";
+})
+document.getElementsByClassName("on-btn")[0].addEventListener('click', function(){
+    document.getElementById("result").style.background = "#c1d92f";
+})
 document.getElementsByTagName("table")[0].addEventListener("click" , function(){
     audio.play()
 });
-
-function comingSoon(){
-    // alert('coming soon')
-    audio.play();
-}
