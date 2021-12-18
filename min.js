@@ -55,7 +55,7 @@ btn.map(clikedtn =>{
                         text.innerText = "0.";
                     }
                     else if(e.target.innerText == "0"){
-                        text.innerText = "00";0
+                        text.innerText = "0";
                     }
                     else{
                     text.innerText = e.target.innerText;
