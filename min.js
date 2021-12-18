@@ -1,6 +1,7 @@
 let audio = document.getElementsByTagName('audio')[0];
 var btn = Array.from(document.getElementsByTagName("td"));
 var text = document.getElementsByClassName('text')[0]
+var clickbtn = document.getElementsByClassName("table")[0];
 
 btn.map(clikedtn =>{
     clikedtn.addEventListener('click' , (e) =>{
@@ -54,7 +55,7 @@ btn.map(clikedtn =>{
                         text.innerText = "0.";
                     }
                     else if(e.target.innerText == "0"){
-                        text.innerText = "00";
+                        text.innerText = "00";0
                     }
                     else{
                     text.innerText = e.target.innerText;
@@ -79,11 +80,18 @@ btn.map(clikedtn =>{
 })
 document.getElementsByClassName("off-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#292929";
-    this.off = true
+    clickbtn.classList="btndisabled"
 })
 document.getElementsByClassName("on-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#c1d92f";
+    document.getElementsByTagName("table")[0].classList="table"
 })
-document.getElementsByTagName("table")[0].addEventListener("click" , function(){
-    audio.play()
+clickbtn.addEventListener("click" , function(){
+    if(clickbtn.classList=="btndisabled"){
+        console.log('off');
+    }
+    else{
+        audio.currentTime = 0;
+        audio.play()
+    }
 });
