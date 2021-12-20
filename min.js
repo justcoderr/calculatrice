@@ -2,6 +2,8 @@ let audio = document.getElementsByTagName('audio')[0];
 var btn = Array.from(document.getElementsByTagName("td"));
 var text = document.getElementsByClassName('text')[0]
 var clickbtn = document.getElementsByClassName("table")[0];
+let onn = document.getElementById('sound-control')
+let lump = document.getElementById('lump')
 
 btn.map(clikedtn =>{
     clikedtn.addEventListener('click' , (e) =>{
@@ -22,7 +24,7 @@ btn.map(clikedtn =>{
             case '%':
                 this.text.innerText = this.text.innerText;
                 break;
-            case 'tax':
+            case '♫':
                 this.text.innerText = this.text.innerText;
                 break;
             case 'm+':
@@ -81,13 +83,15 @@ btn.map(clikedtn =>{
 document.getElementsByClassName("off-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#292929";
     clickbtn.classList="btndisabled"
+    lump.classList = 'sound-off'
 })
 document.getElementsByClassName("on-btn")[0].addEventListener('click', function(){
     document.getElementById("result").style.background = "#c1d92f";
-    document.getElementsByTagName("table")[0].classList="table"
+    document.getElementsByTagName("table")[0].classList="table";
+    lump.classList = 'sound-onn'
 })
 clickbtn.addEventListener("click" , function(){
-    if(clickbtn.classList=="btndisabled"){
+    if(clickbtn.classList=="btndisabled" || lump.classList == 'sound-off'){
         console.log('off');
     }
     else{
@@ -95,3 +99,11 @@ clickbtn.addEventListener("click" , function(){
         audio.play()
     }
 });
+onn.addEventListener('click', function(){
+    if(clickbtn.classList=="btndisabled" || lump.classList=="sound-onn"){
+        lump.classList = 'sound-off'
+    }
+    else{
+        lump.classList = 'sound-onn'
+    }
+})
